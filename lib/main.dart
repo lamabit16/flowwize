@@ -1,7 +1,25 @@
-للخلفية الأساسية (بيحسس الطالب بالهدوء والتركيز العميق).
+import 'package:flutter/material.dart';
+// لاحظي هنا غيرنا المسار لأن الملف دخل داخل مجلد screens
+import 'screens/habit_screen.dart';
 
-Electric Violet (#700BFF): للأزرار والعناصر المهمة (بيعطي طاقة وإبداع).
+void main() {
+  runApp(const FlowWizeApp());
+}
 
-Soft Lilac (#E0C3FC): للنصوص الفرعية أو الأيقونات الهادئة.
+class FlowWizeApp extends StatelessWidget {
+  const FlowWizeApp({super.key});
 
-Cyber Amber (#FFD700
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'FlowWize',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: const Color(0xFFA020F0), // Hot Purple
+        scaffoldBackgroundColor: const Color(0xFF0F0C29), // Midnight
+      ),
+      home: const HabitScreen(),
+    );
+  }
+}
